@@ -4,8 +4,8 @@ import mongoose from "mongoose"
 export const connectDB=()=>{
     mongoose.connect(process.env.MODEL_URI,{
         dbname:"NodeAPI",
-    }).then(()=>{
-        console.log("database connected")
+    }).then((c)=>{
+        console.log(`database connected with ${c.connection.host}`)
     }).catch(()=>{
         console.log("something went wrong")
     })
